@@ -1,5 +1,7 @@
 package linkedlist;
 
+import java.util.Objects;
+
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -32,9 +34,38 @@ public class LinkedList {
         length++;
     }
 
-    public void prepend(int value) {}
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        if(length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
+
+    }
 
     public void insert(int index, int value) {}
+
+    public Node removeLast() {
+        if (length == 0) return null;
+        Node curr = head;
+        Node prev = head;
+        while(Objects.nonNull(curr.next)) {
+            prev = curr;
+            curr = curr.next;
+        }
+        tail = prev;
+        tail.next = null;
+        length--;
+        if (length == 0) {
+            head = null;
+            tail = null;
+        }
+        return curr;
+    }
 
     public void printList() {
         Node temp = head;
