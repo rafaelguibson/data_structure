@@ -26,4 +26,24 @@ public class LinkedList {
     public void prepend(int value) {}
 
     public void insert(int index, int value) {}
+
+    public void printList() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.value + " ");
+            temp = temp.next;
+        }
+    }
+
+    public void getHead() {
+        System.out.println("Head: " + head.value);
+    }
+
+    public void getTail() {
+        System.out.println("Tail: " + tail.value);
+    }
+
+    public void getLength() {
+        System.out.println("Length: " + length);
+    }
 }
