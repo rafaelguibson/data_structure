@@ -21,5 +21,9 @@ public class Main {
         newLinkedList.prepend(9);
         newLinkedList.printList();
 
+        final LinkedList lista2 = new LinkedList(8);
+
+        lista2.append(8);
+        lista2 = newLinkedList;
     }
 }
